@@ -1,3 +1,3 @@
 # FRechdoc
 
-Technical documentation about tools used in Freiburg language documentation projects
+Technical documentation about tools and conventions used in Freiburg based language documentation projects. 
