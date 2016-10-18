@@ -4,7 +4,7 @@
 
 - Our [ELAN](https://langdoc.github.io/FRechdoc/elan.html) template.
 - The [tools](https://langdoc.github.io/FRechdoc/tools.html) we are using.
-- Our [transcription conventions](https://langdoc.github.io/ceonventions.html).
+- Our [transcription conventions](https://langdoc.github.io/conventions.html).
 
 ##### R packages developed within Iźva Komi Documentation project
 
