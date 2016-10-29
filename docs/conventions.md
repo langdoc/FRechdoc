@@ -1,1 +1,0 @@
-Here is a thorough discussion of our transcription conventions.
