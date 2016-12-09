@@ -13,7 +13,7 @@ Our approach is to combine knowledge and tools from the applied fields of Langua
 
 - Our [ELAN](https://langdoc.github.io/FRechdoc/docs/elan.html) template.
 - The [tools](https://langdoc.github.io/FRechdoc/docs/tools.html) we are using.
-- Our [transcription conventions](https://langdoc.github.io/FRechdocconventions.html).
+- Our [transcription conventions](https://langdoc.github.io/FRechdoc/conventions.html).
 
 ### R packages developed within Iźva Komi Documentation project
 
