@@ -1,8 +1,8 @@
-#ELAN Tiers
+# ELAN Tiers
 
 This page documents the ELAN tier structures used by our projects. Adherance to these structures is necessary to use the [annotation engine scripts](Engine.md) which automatically tokenize and add morphosyntactic annotations.
 
-##ELAN Linguistic Types
+## ELAN Linguistic Types
 
 Mandatory types:
 
@@ -69,31 +69,30 @@ These tiers are created automatically by the annotation engine with the result t
 
 ## General Rules
 
-*all tiers for a given speaker are named using the tier name plus the @ symbol plus an short form referring to the relevant speaker, such as ref@JKW, lemma@JKW
-
+- all tiers for a given speaker are named using the tier name plus the @ symbol plus an short form referring to the relevant speaker, such as ref@JKW, lemma@JKW
 - Each ref annotation must have content and it has to be unique
 - Each tier must have participant, uniquely identified after @ in tier name; standard for naming participants can be project-specific
 - These tiers must have a language specified in the attribute: orth, word, lemma, ft-(<…>), note-(<…>)
 
-##ELAN Tier Template Files for Download
+## ELAN Tier Template Files for Download
 
 Template files (in ELAN .etf format):
 
-* For spoken corpus data
- * [Master template|ELAN/ELAN_spoken_template.etf] (including all possible annotation tiers and linguistic types)
- * [PSDP template|ELAN/ELAN_spoken_template_PSDP.etf] (including only annotation tiers and linguistic types relevant for PSDP)
- * KSDP template (including only annotation tiers and linguistic types relevant for KSDP
- * IKDP template (including only annotation tiers and linguistic types relevant for IKDP
-*For written corpus data
- * Master template (including all possible annotation tiers and linguistic types)
- * PSDP template (including only annotation tiers and linguistic types relevant for PSDP)
- * KSDP template (including only annotation tiers and linguistic types relevant for KSDP
- * IKDP template (including only annotation tiers and linguistic types relevant for IKDP
+- For spoken corpus data
+    - [Master template|ELAN/ELAN_spoken_template.etf] (including all possible - annotation tiers and linguistic types)
+    - [PSDP template|ELAN/ELAN_spoken_template_PSDP.etf] (including only annotation tiers and linguistic types relevant for PSDP)
+    - KSDP template (including only annotation tiers and linguistic types relevant for KSDP
+    - IKDP template (including only annotation tiers and linguistic types relevant for IKDP
+- For written corpus data
+    - Master template (including all possible annotation tiers and linguistic types)
+    - PSDP template (including only annotation tiers and linguistic types relevant for PSDP)
+    - KSDP template (including only annotation tiers and linguistic types relevant for KSDP
+    - IKDP template (including only annotation tiers and linguistic types relevant for IKDP
 
 
 ## Unsolved questions and other things to do
 
-To add orig-convention to places where it is needed
-To come up with some solution to resolve note-tiers
-Ref tier pattern: .0024?
-Translation-tiers where ‘lang’ is replaced with specific language (eng=english, deu=deutsch -- use ISO-codes?); can have multiple derivations. Should we shift to Glottocodes in some point?
+- To add orig-convention to places where it is needed
+- To come up with some solution to resolve note-tiers
+- Ref tier pattern: .0024?
+- Translation-tiers where ‘lang’ is replaced with specific language (eng=english, deu=deutsch -- use ISO-codes?); can have multiple derivations. Should we shift to Glottocodes in some point?
