@@ -1,6 +1,5 @@
 ---
 title: ELAN documentation
-layout: post
 ---
 
 This page documents conventions, standards and relevant workflows used for ELAN annotations created by [The Freiburg Research Group in Saami Studies](http://www.skandinavistik.uni-freiburg.de/institut/forschung/forschungsprojekte/saami) in collaboration with other partners.
