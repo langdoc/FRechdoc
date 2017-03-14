@@ -34,6 +34,7 @@
 ⋅⋅+note-refT
 ⋅⋅+note-orthT
 ⋅⋅+note-wordT
++ what to do when there are more than one orth-orig? (e.g. Wickman's sje-text with phonetic (FUPA), phonemic (more-less Swedish-Saami), AND adapted north-Saami orthography)
 
 
 ***
