@@ -6,10 +6,7 @@ This page contains technical documentation about tools and conventions used in F
 
 In folder `etf` there are two different ELAN templates. `template_fst` is meant to be used in conjunction with Giellatekno's FST tools, whereas `template_manual` can be used independently. In principle these two templates can interoperate, as the manual annotations are considered gold-standard into which the automatic annotations can be compared.
 
-## The documents not yet in Wiki (please update as you go)
+## Controlled vocabularies
 
-- Engine.md
-- GRAID.md
-- TLA.md
-- Toolbox.md
-- tools.md
+**To be added!**
+
