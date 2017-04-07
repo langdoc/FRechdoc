@@ -1,0 +1,36 @@
+---
+title: "RMarkdown example"
+author: "Niko Partanen"
+date: "4/7/2017"
+header-includes:
+   - \usepackage{expex}
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+mainfont: Charis SIL
+monofont: Charis SIL
+sansfont: Charis SIL
+bibliography: langdoc.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RMarkdown example
+
+This document demonstrates basic usage of RMarkdown, with special focus in linguistic data. Actually the idea is to reproduce more or less the same document in various formats, for example, in LaTeX, RMarkdown and Jupyter Notebook.
+
+If RMarkdown is compiled into PDF, it is possible to add plain LaTeX into it.
+
+\ex
+\begingl
+\gla А сійӧ нинӧм эз шу//
+\glb and he nothing neg.3\sc{sg.pst} say.\sc{conneg}//
+\glft ‘And he doesn't say anything.’//
+\endgl
+\xe 
+
+Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger et. al. [@gerstenbergerEtAl2017b].
+
+## References
