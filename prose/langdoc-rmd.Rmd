@@ -27,7 +27,7 @@ If RMarkdown is compiled into PDF, it is possible to add plain LaTeX into it.
 \begingl
 \gla А сійӧ нинӧм эз шу//
 \glb and he nothing neg.3\sc{sg.pst} say.\sc{conneg}//
-\glft ‘And he doesn't say anything.’//
+\glft ‘And he didn't say anything.’//
 \endgl
 \xe 
 
