@@ -1,4 +1,7 @@
-These are example templates that demonstrate different usage of LaTeX and RMarkdown in linguistic papers, with specific focus to the needs of linguists working on Uralic languages.
+These are example templates that demonstrate different usage of LaTeX and RMarkdown in linguistic papers, with specific focus to the needs of linguists working on Uralic languages. The main issues are:
+
+- The need to manage citations is probably not more complex than on other scientific fields, but on the other hand there is need to cite different digital resources, and the sources come in many different languages
+- XeLaTeX has to be used as it can take care of more complex characters we need in glosses and elsewhere
 
 ## XeLaTeX
 
@@ -20,3 +23,15 @@ From Terminal one can also just start R and run following lines. Only the last o
     R
     if (!rmarkdown %in% installed.packages()) install.packages('rmarkdown')
     rmarkdown::render('langdoc-rmd.Rmd')
+
+## Tasks
+
+- Description of tables
+- Description of adding images
+- Description of using footnotes
+- Explanation on document language settings
+- Explanation on custom hyphenation
+
+## How to contribute
+
+Just fork the repository and contribute! It is possible to discuss more complex ideas in issues. For example, if someone has very wild ideas it may be good to have one very basic version and then another which gets more fancy and experimental. Just add your name into authors of relevant documents, and if your text is copied there, then your name will be added.
