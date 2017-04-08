@@ -19,4 +19,4 @@ From Terminal one can also just start R and run following lines. Only the last o
 
     R
     if (!rmarkdown %in% installed.packages()) install.packages('rmarkdown')
-    rmarkdown::render('output_file.Rmd')
+    rmarkdown::render('langdoc-rmd.Rmd')
