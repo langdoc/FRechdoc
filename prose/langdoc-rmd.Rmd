@@ -2,13 +2,13 @@
 title: "RMarkdown example"
 author: "Niko Partanen"
 date: "4/7/2017"
-header-includes:
-   - \usepackage{expex}
-output: 
-  pdf_document: 
+output:
+  pdf_document:
     latex_engine: xelatex
+  html_document: default
 mainfont: Charis SIL
 monofont: Charis SIL
+header-includes: \usepackage{expex}
 sansfont: Charis SIL
 bibliography: langdoc.bib
 ---
@@ -21,6 +21,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This document demonstrates basic usage of RMarkdown, with special focus in linguistic data. Actually the idea is to reproduce more or less the same document in various formats, for example, in LaTeX, RMarkdown and Jupyter Notebook.
 
+As far as we know, RMarkdown is not widely used format in linguistic papers, so thereby this document has almost instantly been taken away from 'simple' example, and it demonstrates different advanced use of RMarkdown.
+
 If RMarkdown is compiled into PDF, it is possible to add plain LaTeX into it.
 
 \ex
@@ -31,6 +33,37 @@ If RMarkdown is compiled into PDF, it is possible to add plain LaTeX into it.
 \endgl
 \xe 
 
-Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger et. al. [@gerstenbergerEtAl2017b].
+Syntax for using citations in RMarkdown is `[@citekey]`, or `[@citekey, 80-81]` if the pages are specified. The example below demonstrates this:
+
+> Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger et. al. [@gerstenbergerEtAl2017b].
+
+Comments can be added to RMarkdown document with following convention: `<!-- comment goes here -->`.
+
+
+
+<!--
+
+This section demonstrates usage which is not yet entirely figured out.
+
+## Conditional gloss output
+
+```{r}
+
+add_gloss <- function(token, gloss, ft) {
+  if ( rmarkdown::all_output_formats('langdoc-rmd.Rmd') == 'pdf_document') {
+    paste0('\\pex\n\\begingl\n\\gla ', token, ' //\n\\glb ', gloss, ' //\n\\glft ', ft, ' //\n\\endgl\n\\xe')
+  }
+  
+  if ( rmarkdown::all_output_formats('langdoc-rmd.Rmd') == 'html_document') {
+    shiny::div('data-gloss'='', shiny::p(token), shiny::p(gloss), shiny::p(ft))
+  }
+}
+
+add_gloss(token = 'Newell love-s Sheba',
+          gloss = 'Newell love-3sg sheba',
+          ft = 'Newell rakastaa Shebaa')
+```
+
+-->
 
 ## References
