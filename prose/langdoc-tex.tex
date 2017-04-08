@@ -1,19 +1,50 @@
- \documentclass[a4paper, 12pt, english]{article}
- \usepackage{polyglossia}
- \usepackage{expex}
- \setromanfont{Charis SIL}
- 
- \title{\LaTeX-example}
- \author{Niko Partanen}
- \date{7.4.2017}
+\documentclass[a4paper, 12pt, english]{article}
+
+%%%Xelatex
+\usepackage{xltxtra,xunicode}
+%%%
+
+%%%polyglossia
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+%%%
+
+%%%Expex
+\usepackage{expex}
+%%%
+
+%%%Font
+\setromanfont{Charis SIL}
+%%%
+
+%%%Biblatex
+\usepackage[	
+			language=english,
+			backend=biber,
+			style=authoryear,
+			]{biblatex}
+\bibliography{langdoc}
+%%%
+  
+%%%Title
+\title{\XeLaTeX-example}
+\author{
+	Niko Partanen
+	\and
+	Michael Rießler
+	}
+\date{\today}
+%%%
  
 \begin{document}
 
 \maketitle 
 
-This document demonstrates basic usage of \LaTeX, with special focus in linguistic data. Actually the idea is to reproduce more or less the same document in various formats besides LaTeX, for example, in RMarkdown and Jupyter Notebook.
+This document demonstrates basic usage of \XeLaTeX, with special focus in linguistic data. Actually the idea is to reproduce more or less the same document in various formats besides LaTeX, for example, in RMarkdown and Jupyter Notebook.
 
 % This is a comment, it will not be visible in the output.
+
+\section{Linguistic examples}
 
 \ex
 \begingl
@@ -23,10 +54,25 @@ This document demonstrates basic usage of \LaTeX, with special focus in linguist
 \endgl
 \xe 
 
-Here would be an example with citation if Niko would know how to make it work.
+\section{Using BibLaTeX}
 
-% Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger et. al. \cite{gerstenbergerEtAl2017b}.
+Here are a few basic examples for the use of citations with BibLaTeX. Michael is not sure whether all these functions work in markdown as well.
+
+\begin{itemize}
+\item Mention of a whole work in the text:
+	\subitem Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by \cite{gerstenbergerEtAl2017b}.
+\item Mention of an author with reference to a specific work:
+	\subitem Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by \textcite{gerstenbergerEtAl2017b}.
+\item Mention of an author with reference to a specific work and specific pages:
+	\subitem Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by \textcite[10-11]{gerstenbergerEtAl2017b}.
+\item Reference for a statement in the text:
+	\subitem Komi is a Uralic language \parencite[2]{gerstenbergerEtAl2017b}.
+\item Reference for a statement in the text, incl. additional notes:
+	\subitem Komi is a Uralic language \parencite[against the statement made by][4]{gerstenbergerEtAl2017b}.
+\item Mention of several authors with reference to specific works and specific pages:
+	\subitem Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by \textcites[10-11]{gerstenbergerEtAl2017b}[2]{gerstenbergerEtAl2017a}.
+\end{itemize}
    
- \end{document}
- 
-  \printbibliography
+\printbibliography
+
+\end{document}
