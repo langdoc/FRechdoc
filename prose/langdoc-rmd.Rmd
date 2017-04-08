@@ -1,11 +1,12 @@
 ---
 title: "RMarkdown example"
-author: "Niko Partanen"
-date: "4/7/2017"
+author: "Niko Partanen & Michael Rießler"
+date: "4/8/2017"
 output:
   pdf_document:
     latex_engine: xelatex
-  html_document: default
+documentclass: article
+fontsize: 12
 mainfont: Charis SIL
 monofont: Charis SIL
 header-includes: \usepackage{expex}
@@ -16,8 +17,6 @@ bibliography: langdoc.bib
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## RMarkdown example
 
 This document demonstrates basic usage of RMarkdown, with special focus in linguistic data. Actually the idea is to reproduce more or less the same document in various formats, for example, in LaTeX, RMarkdown and Jupyter Notebook.
 
@@ -39,7 +38,20 @@ Syntax for using citations in RMarkdown is `[@citekey]`, or `[@citekey, 80-81]` 
 
 Comments can be added to RMarkdown document with following convention: `<!-- comment goes here -->`.
 
+One difference between RMarkdown and LaTeX is that in RMarkdown it is possible to have as detailed control over citation formatting, please compare this document and `langdoc-tex.tex` to get overview.
 
+- Mention of a whole work in the text:
+    - Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger, Partanen and Rießler [-@gerstenbergerEtAl2017b].
+- Mention of an author with reference to a specific work:
+    - Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger, Partanen and Rießler [-@gerstenbergerEtAl2017b].
+- Mention of an author with reference to a specific work and specific pages:
+    - Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger, Partanen and Rießler [-@gerstenbergerEtAl2017b, p. 10-11].
+- Reference for a statement in the text:
+    - Komi is a Uralic language [@gerstenbergerEtAl2017b].
+- Reference for a statement in the text, incl. additional notes (maybe not possible in Markdown?):
+    - Komi is a Uralic language (against the statement made by Gerstenberger, Partanen & Rießler [-@gerstenbergerEtAl2017b, p. 4]).
+-  Mention of several authors with reference to specific works and specific pages:
+    - Possibilities of adding morphological analysis automatically to ELAN files were recently demonstrated by Gerstenberger, Partanen and Rießler [-@gerstenbergerEtAl2017b, 10-11] and Gerstenberger, Partanen, Rießler and Wilbur [-@gerstenbergerEtAl2017a, 2].
 
 <!--
 
