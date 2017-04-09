@@ -26,11 +26,13 @@ If RMarkdown is compiled into PDF, it is possible to add plain LaTeX into it.
 
 \ex
 \begingl
-\gla А сійӧ нинӧм эз шу//
-\glb and he nothing neg.3\sc{sg.pst} say.\sc{conneg}//
+\gla А   сійӧ нинӧм   эз               шу//
+\glb and he   nothing neg.3\sc{sg.pst} say.\sc{conneg}//
 \glft ‘And he didn't say anything.’//
 \endgl
 \xe 
+
+**Note that proper alignment of the glossed example is shown first in the compiled PDF; in the RMarkdown source code the author can manually align, if s/he finds this more convenient.**
 
 Syntax for using citations in RMarkdown is `[@citekey]`, or `[@citekey, 80-81]` if the pages are specified. The example below demonstrates this:
 
