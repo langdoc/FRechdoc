@@ -1,0 +1,10 @@
+type_name,prefix,parent_prefix,constraints,time_alignable
+refT,ref@,,,TRUE
+orthT,orth@,ref@,Symbolic_Association,FALSE
+ft-engT,ft-eng@,orthT,Symbolic_Association,FALSE
+ft-rusT,ft-rus@,orthT,Symbolic_Association,FALSE
+ft-finT,ft-fin@,orthT,Symbolic_Association,FALSE
+wordT,word@,orthT,Symbolic_Subdivision,FALSE
+lemmaT,lemma@,word@,Symbolic_Subdivision,FALSE
+posT,pos@,lemma@,Symbolic_Subdivision,FALSE
+morphT,morph@,pos@,Symbolic_Subdivision,FALSE
