@@ -1,0 +1,67 @@
+---
+author: "Niko Partanen"
+date: "5/9/2017"
+output: html_document
+params:
+   language: Kildin Saami
+   project: KSDP
+   directory: '~/Dropbox/FRorpus/'
+   tier_prefix: 'word@'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(xml2)
+library(stringr)
+```
+
+## `r params$language` status report
+
+```{r, echo=FALSE}
+
+punct <- read_lines('https://raw.githubusercontent.com/langdoc/FRechdoc/master/transcription/punctuation.txt') # %>% 
+        #Hmisc::escapeRegex()
+
+token_xpath <- paste0("//TIER[starts-with(@TIER_ID, '", 
+                      params$tier_prefix, 
+                      "')]/ANNOTATION/*/ANNOTATION_VALUE")
+
+eaf_files <- dir(path = params$directory, pattern = 'eaf$', full.names = T, recursive = T)
+
+corpus <- eaf_files %>% 
+        map(read_xml) %>%
+        discard(., ~ .x %>% 
+                        xml_find_all(token_xpath) %>% 
+                        length == 0) %>%
+        map_df(., ~ tibble(token = .x %>% 
+                                xml_find_all(token_xpath) %>% 
+                                xml_text)) %>%
+        bind_rows()
+
+```
+
+This is a report on `r params$language` corpus built within `r params$project` project.
+
+The corpus contains currently, `r Sys.Date()`, `r nrow(corpus)` tokens, of which `r corpus %>% filter(! token %in% punct) %>% nrow` are word tokens.
+
+The most common word tokens are:
+
+```{r, echo=FALSE}
+
+corpus %>% 
+        filter(! token %in% punct) %>% # remove punctuation characters
+        mutate(token = str_trim(token)) %>% # trimming whitespace
+        mutate(token = tolower(token)) %>% # lowercase
+        filter(token != ' +') %>% # remove spaces if around
+        filter(token != '') %>% # remove empty tokens
+        count(token) %>% # counting tokens
+        arrange(desc(n)) %>% # most common tokens first
+        slice(1:10) %>% # slice ten most common
+        knitr::kable()
+
+```
+
