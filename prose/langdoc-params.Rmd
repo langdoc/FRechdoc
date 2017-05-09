@@ -1,21 +1,18 @@
 ---
 params:
-   dynamic_author: 'Niko Partanen'
+   author: 'Niko Partanen'
    language: 'Some language'
    project: 'Some project'
    directory: '.'
    tier_prefix: 'word@'
    eaf_filter: '.+'
-author: '`r params$dynamic_author`'
+author: '`r params$author`'
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Used libraries
 library(tidyverse)
 library(xml2)
 library(stringr)
@@ -25,14 +22,20 @@ library(stringr)
 
 ```{r, echo=FALSE}
 
-punct <- read_lines('https://raw.githubusercontent.com/langdoc/FRechdoc/master/transcription/punctuation.txt') # %>% 
-        #Hmisc::escapeRegex()
+# This downloads the punctuation token file
 
-token_xpath <- paste0("//TIER[starts-with(@TIER_ID, '", 
-                      params$tier_prefix, 
-                      "')]/ANNOTATION/*/ANNOTATION_VALUE")
+punct <- read_lines('https://raw.githubusercontent.com/langdoc/FRechdoc/master/transcription/punctuation.txt')
+
+# In principle the whole XPATH could be a parameter,
+# now it is only the tier prefix up to @ character
+
+token_xpath <- paste0("//TIER[starts-with(@TIER_ID, '", params$tier_prefix, "')]/ANNOTATION/*/ANNOTATION_VALUE")
+
+# This finds all ELAN files
 
 eaf_files <- dir(path = params$directory, pattern = 'eaf$', full.names = T, recursive = T)
+
+# This builds a data frame out of them
 
 corpus <- eaf_files %>% 
         keep(., ~ str_detect(.x, params$eaf_filter)) %>%
@@ -54,6 +57,9 @@ The corpus contains currently, `r Sys.Date()`, `r nrow(corpus)` tokens, of which
 The most common word tokens are:
 
 ```{r, echo=FALSE}
+
+# This builds a table with most common word tokens,
+# please notice quite a bit is done in this point too
 
 corpus %>% 
         filter(! token %in% punct) %>% # remove punctuation characters
