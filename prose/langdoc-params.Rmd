@@ -1,12 +1,14 @@
 ---
-author: "Niko Partanen"
-date: "5/9/2017"
-output: html_document
 params:
-   language: Kildin Saami
-   project: KSDP
-   directory: '~/Dropbox/FRorpus/'
+   dynamic_author: 'Niko Partanen'
+   language: 'Some language'
+   project: 'Some project'
+   directory: '.'
    tier_prefix: 'word@'
+   eaf_filter: '.+'
+author: '`r params$dynamic_author`'
+date: "`r Sys.Date()`"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -33,6 +35,7 @@ token_xpath <- paste0("//TIER[starts-with(@TIER_ID, '",
 eaf_files <- dir(path = params$directory, pattern = 'eaf$', full.names = T, recursive = T)
 
 corpus <- eaf_files %>% 
+        keep(., ~ str_detect(.x, params$eaf_filter)) %>%
         map(read_xml) %>%
         discard(., ~ .x %>% 
                         xml_find_all(token_xpath) %>% 
