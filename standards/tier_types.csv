@@ -9,6 +9,12 @@ ft-rusT,Symbolic_Association
 ft-sweT,Symbolic_Association
 ft-finT,Symbolic_Association
 ft-lingT,Symbolic_Association
+ft-nobT,Symbolic_Association
+phonet-upaT,Symbolic_Association
+phonol-cyrT,Symbolic_Association
+translit-latT,Symbolic_Association
+phonet-ipaT,Symbolic_Association
+phonol-latT,Symbolic_Association
 wordT,Symbolic_Subdivision
 posT,Symbolic_Subdivision
 lgT,Symbolic_Association
