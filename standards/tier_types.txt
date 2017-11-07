@@ -1,0 +1,16 @@
+LINGUISTIC_TYPE_ID,CONSTRAINTS
+refT,NA
+orthT,NA
+partT,Symbolic_Association
+ft-engT,Symbolic_Association
+ft-deuT,Symbolic_Association
+ft-rusT,Symbolic_Association
+ft-sweT,Symbolic_Association
+ft-finT,Symbolic_Association
+ft-lingT,Symbolic_Association
+wordT,Symbolic_Subdivision
+posT,Symbolic_Subdivision
+lgT,Symbolic_Association
+lemmaT,Symbolic_Subdivision
+morphT,Symbolic_Subdivision
+commentT,NA
