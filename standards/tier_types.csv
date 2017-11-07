@@ -1,8 +1,8 @@
 LINGUISTIC_TYPE_ID,CONSTRAINTS
 partT,NA
 refT,NA
-orthT,NA
-partT,Symbolic_Association
+partT,NA
+orthT,Symbolic_Association
 ft-engT,Symbolic_Association
 ft-deuT,Symbolic_Association
 ft-rusT,Symbolic_Association
